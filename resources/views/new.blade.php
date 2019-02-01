@@ -1,17 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Neuen Eintrag erstellen</h1>
 
-    @foreach($errors->all() as $error)
-        <p class="error">{{ $error  }}</p>
+    <div class="container">
+        <div class="row" align="center">
+        <div class="col">
+            <h2>Neuen Eintrag erstellen</h2>
+        </div>
+        </div>
 
-        @endforeach
+        <div class="row" align="center">
 
-    {{ Form::open() }}
+            <div class="col m-3">
+                @foreach($errors->all() as $error)
+                    <p class="error">{{ $error  }}</p>
 
-        <input type="text" name="name" placeholder="Dein Eintrag" />
-        <input type="submit" value="Erstellen" />
-    {{ Form::close() }}
+                    @endforeach
 
-    @stop
+                {{ Form::open() }}
+
+                    <input type="text" class="form-control-sm" name="name" placeholder="Dein Eintrag" />
+
+                    <input type="submit" class="btn btn-success btn-sm" role="button" value="Erstellen" />
+
+                {{ Form::close() }}
+
+
+                @stop
+            </div>
+
+
+    </div>

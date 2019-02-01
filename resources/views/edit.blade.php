@@ -2,12 +2,26 @@
 
 @section('content')
 
-    <h1>Eintrag bearbeiten</h1>
+    <div class="container">
+        <div class="row" align="center">
+            <div class="col">
+                <h2>Eintrag bearbeiten</h2>
+            </div>
+        </div>
+
+        <div class="row" align="center">
+            <div class="col">
 
     <form action="{{ URL::route('save', $todo_eintrag->id) }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <input type="text" name="name" value="{{$todo_eintrag->todo_eintrag}}" />
-        <input type="submit" value="Ändern">
+       <!-- <input type="text" name="name" value="{{$todo_eintrag->todo_eintrag}}" /> -->
+
+        <input type="text" class="form-control-sm" name="name" value="{{$todo_eintrag->todo_eintrag}}" />
+
+        <input type="submit" class="btn btn-secondary btn-sm" role="button" value="Ändern">
     </form>
 
 @stop
+            </div>
+        </div>
+    </div>
